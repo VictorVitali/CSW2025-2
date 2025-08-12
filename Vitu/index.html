@@ -1,0 +1,177 @@
+<style>
+    .toppezon {
+        display: flex;
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        justify-content: space-between;
+        background-color: blueviolet;
+        font-size: 100px;
+    }
+
+    .logOut {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logOut span {
+        font-size: 20px;
+    }
+
+    .ExitIcon {
+        height: 60px;
+    }
+
+    #Navegacao {
+        min-width: 15%;
+        background-color: aqua;
+    }
+
+    .listagem {
+        padding: 10px;
+        font-size: 30px;
+        align-items: center;
+    }
+
+    .iconList {
+        width: 30px;
+        height: auto;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #Main {
+        display: flex;
+        min-height: 80vh;
+        width: auto;
+        font-size: 70px;
+        background-color: blue;
+        color: white;
+    }
+
+    #footer {
+        display: flex;
+        font-size: 50px;
+        background-color: pink;
+        align-items: center;
+        min-height: 50px;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<HEAder>
+    <div style="display: flex; width: 100%; min-height: 15%;">
+        <div>
+            <a href="../Vitu/index.html">
+                <img style="width: 250px; height: 100%;" id="Logo"
+                    src="https://e7.pngegg.com/pngimages/378/222/png-clipart-logo-domain-name-world-wide-web-web-design-logo.png">
+            </a>
+        </div>
+        <div class="toppezon">
+            Site da aula
+            <div class="logOut" onclick="LogOut();">
+                    <img class="ExitIcon" src="../Vitu/sair.png">
+                    <span>SAIR</span>
+            </div>
+        </div>
+    </DIV>
+</HEAder>
+
+<body>
+    <div id="Main">
+        <div id="Navegacao">
+            <ul>
+                <a href="../Vitu/index.html">
+                    <li class="listagem">
+                        <img class="iconList" src="../Vitu/home.png">
+                        HOME
+                    </li>
+                </a>
+                <a href="../Vitu/Vendas.html">
+                    <li class="listagem">
+                        <img class="iconList" src="../Vitu/carrinho.png">
+                        VENDER
+                    </li>
+                </a>
+                <a href="../Vitu/Estoque.html">
+                    <li class="listagem">
+                        <img class="iconList" src="../Vitu/estoque.png">
+                        ESTOQUE
+                    </li>
+                </a>
+                <a href="../Vitu/Estoque.html">
+                    <li class="listagem">
+                        <img class="iconList" src="../Vitu/config.png">
+                        CONFIGURAÇÕES
+                    </li>
+                </a>
+            </ul>
+        </div>
+        <div id="main" >
+            <h1>
+                HELLO WORLD
+            </h1>
+            <h2>
+                MAIN QUANDO COLOCAR REACT, SE PA Q VOU FICAR COM PREGUIÇA DE COLOCAR, MAS TA AI
+            </h2>
+        </div>
+    </div>
+</body>
+<footer id="footer">
+    FOOOOOOOOOOTER
+</footer>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    function LogOut(){
+        alert("LOGOUT");
+    }
+</script>
