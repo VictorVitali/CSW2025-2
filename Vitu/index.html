@@ -5,7 +5,6 @@
         text-align: center;
         align-items: center;
         justify-content: space-between;
-        background-color: blueviolet;
         font-size: 100px;
     }
 
@@ -24,7 +23,6 @@
 
     #Navegacao {
         min-width: 15%;
-        background-color: aqua;
     }
 
     .listagem {
@@ -44,13 +42,18 @@
         align-items: center;
         text-align: center;
     }
+    .yellowbg{
+        background-color: #4f4e4c;
+    }
+    .lightYellowbg{
+        background-color: #6e6c66;
+    }
 
     #Main {
         display: flex;
         min-height: 80vh;
         width: auto;
         font-size: 70px;
-        background-color: blue;
         color: white;
     }
 
@@ -99,7 +102,7 @@
                     src="https://e7.pngegg.com/pngimages/378/222/png-clipart-logo-domain-name-world-wide-web-web-design-logo.png">
             </a>
         </div>
-        <div class="toppezon">
+        <div class="toppezon yellowbg">
             Site da aula
             <div class="logOut" onclick="LogOut();">
                     <img class="ExitIcon" src="../Vitu/sair.png">
@@ -110,8 +113,8 @@
 </HEAder>
 
 <body>
-    <div id="Main">
-        <div id="Navegacao">
+    <div id="Main" class="lightYellowbg">
+        <div id="Navegacao" class="yellowbg">
             <ul>
                 <a href="../Vitu/index.html">
                     <li class="listagem">
