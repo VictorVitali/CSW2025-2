@@ -1,0 +1,87 @@
+<style>
+    .atividade {
+        padding: 5px;
+        font-size: 15px;
+        text-align: left;
+    }
+
+    #setas {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #title {
+        padding: 10px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    #filme {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .emojis {
+        padding: 5px;
+    }
+</style>
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+        <title>AULA-2</title>
+        <link rel="shortcut icon" href="../Aula 2/smile.png" type="image/x-icon">
+    </head>
+<body>
+    <br><br>
+    <div id="setas">
+        <div id="title">Desafio das setas:</div>
+        <div class="atividade">
+            <span>&rarr; Primeiro paragrafo</span>
+        </div>
+        <div class="atividade">
+            <span>&rarr;&rarr; Segundo paragrafo</span>
+        </div>
+        <div class="atividade">
+            <span>&rarr;&rarr;&rarr; Terceiro paragrafo</span>
+        </div>
+        <br>
+        <div class="atividade">
+            <span>&rarr;&rarr;&rarr; Quarto paragrafo</span>
+        </div>
+        <div class="atividade">
+            <span>&rarr;&rarr; Quinto paragrafo</span>
+        </div>
+        <div class="atividade">
+            <span>&rarr; Sexto paragrafo</span>
+        </div>
+    </div>
+    <br>
+    <div id="Filme">
+        <div id="title">Desafio dos filmes:</div>
+        <div class="emojis" onclick="showResp('1')">&#127769;&#x1f6b4;&#128073;&#128072;&#128125;
+        <div id="resp1" style="display:none;">FILME DO ET</div>
+    </div>
+</body>
+</html>
+
+<script>
+    //$(".atividade").onClick(teste(););
+
+    function showResp(id) {
+        var div = document.getElementById("resp"+id+"");
+        if (div.style.display === "none" || div.style.display === "") {
+          div.style.display = "block";
+        } else {
+          div.style.display = "none";
+        }
+    }
+</script>
