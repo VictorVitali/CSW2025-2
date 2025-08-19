@@ -1,0 +1,73 @@
+<style>
+    .JogadorInd{
+        width: 250px;
+        height: 200px; 
+    }
+    .imgJogador{
+        width: 150px;
+        height: 150px;
+    }
+    #Jogadores{
+        display: flex;
+    }
+    .NomeJogadores{
+        font-size: 70px;
+    }
+</style>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Flu.png" type="image/x-icon">
+    <title>Document</title>
+</head>
+<body>
+    <div> FLU </div>
+    <img src="../Aula 3/Flu.png" style="width: 200px;" alt="FLU">
+    <div id="CampoZone">
+        <img src="../Aula 3/campo.jpg" alt="imagem do campo">
+    </div>
+    <div id="Jogadores">
+    </div>
+
+    <h1>Desafio das imagens</h1>
+    <h2>Vila Velha</h2>
+
+    <picture>
+    <source srcset='VilaVelha1.jpg' media='(min-width: 760px)'>
+    <source srcset='VilaVelha2.jpg' media='(max-width: 760px)'>
+    <img class='VilaVelha1.jpg' src='VilaVelha1.jpg' alt='Foto De Vila Velha'>
+    </picture>
+
+</body>
+</html>
+
+<script>
+function populateJogadores() {
+    var jogadores = ["Goleiro", "LateralD", "zagueiro1", "Zagueiro2", "LateralE", "Volante", "Volante2", "Meia", "PontaD", "PontaE", "CentroA"];
+    var html = "";
+
+    jogadores.forEach(element => {
+        html += "<picture>";
+        html += "<source srecset='"+element+".jpg' media='(max-width: 800px)'>";
+        html += "<source srecset='"+element+".jpg' media='(max-width: 800px)'>";
+        html += "<div class='JogadorInd' id='" + element + "'>";
+        html += "<img class='imgJogador' src='" + element + ".jpg' alt='" + element + "'>";
+        html += "</picture>";
+        html += "<div class='JogadorInd' id='" + element + "Pos'>";
+        html += "<label class='NomeJogadores' for='"+element+"select'>"+element+"</label>";
+        html += "</div>";
+        html += "</div>";
+    });
+
+    document.getElementById('Jogadores').innerHTML = html;
+    console.log(html);
+}
+
+populateJogadores();
+
+</script>
