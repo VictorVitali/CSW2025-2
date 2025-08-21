@@ -30,12 +30,18 @@
     <img src="../Aula 3/Flu.png" style="width: 200px;" alt="FLU">
     <div id="CampoZone">
         <img src="../Aula 3/campo.jpg" alt="imagem do campo">
+        <div id="Goleiro" style="display:block; position:absolute; top:620px;"><img src="../Aula 3/Flu.png" style="width: 200px;"></div>    
+        <div id="LateralD" style="display:block; position:absolute; top:200px; left: 300px;"><img src="../Aula 3/Flu.png" style="width: 200px;"></div>    
+        <div id="zagueiro1" style="display:block; position:absolute; top:450px; left: 300px;"><img src="../Aula 3/Flu.png" style="width: 200px;"></div>    
+        <div id="Zagueiro2" style="display:block; position:absolute; top:750px; left: 300px;"><img src="../Aula 3/Flu.png" style="width: 200px;"></div>    
+        <div id="LateralE" style="display:block; position:absolute; top:1000px; left: 300px;"><img src="../Aula 3/Flu.png" style="width: 200px;"></div>    
     </div>
     <div id="Jogadores">
     </div>
 
     <h1>Desafio das imagens</h1>
     <h2>Vila Velha</h2>
+
 
     <picture>
     <source srcset='VilaVelha1.jpg' media='(min-width: 760px)'>
@@ -55,7 +61,7 @@ function populateJogadores() {
         html += "<picture>";
         html += "<source srecset='"+element+".jpg' media='(max-width: 800px)'>";
         html += "<source srecset='"+element+".jpg' media='(max-width: 800px)'>";
-        html += "<div class='JogadorInd' id='" + element + "'>";
+        html += "<div class='JogadorInd' id='" + element + "Fora' onClick='EntrarCampo(\"" + element + "\");'>";
         html += "<img class='imgJogador' src='" + element + ".jpg' alt='" + element + "'>";
         html += "</picture>";
         html += "<div class='JogadorInd' id='" + element + "Pos'>";
@@ -65,8 +71,24 @@ function populateJogadores() {
     });
 
     document.getElementById('Jogadores').innerHTML = html;
-    console.log(html);
+
 }
+function EntrarCampo(posicao) {
+    console.log(`${posicao}`);
+    const pos = document.getElementById(posicao);
+    if (!pos) {
+        console.error(`Elemento com ID "${posicao}" não encontrado.`);
+        return;
+    }
+    pos.style.display = "block";
+    pos.innerHTML = "<img class='imgJogador' src='" + posicao + ".jpg' alt='" + posicao + "' onClick='SairCampo(\"" + posicao + "\")'>";
+}
+
+function SairCampo(posicao){
+    const pos = document.getElementById(posicao);
+    pos.style.display = "none";
+}
+
 
 populateJogadores();
 
