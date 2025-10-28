@@ -1,0 +1,143 @@
+<style>
+    #Cadastro{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }   
+    #formCadastro{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .colum{
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        flex-direction:row;
+        justify-content: space-between;
+    }
+    .campo{
+
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="Cadastro">
+    <h1>Cadastro Pessoa Física</h1>
+    <div id="formCadastro">
+    <form action="">
+        <div class="colum">
+            <div class="campo">
+                <label for="Nome">Nome Completo</label><input type="text" name="Nome" id="Nome">
+            </div>
+            <div  class="campo">
+                <label for="Nascimento">Data de Nascimento</label><input type="date" name="Nascimento" id="Nascimento">
+            </div>
+        </div>
+        <div class="colum">
+            <div  class="campo">
+                <label for="CPF">CPF</label><input type="number" name="CPF" id="CPF">
+            </div>
+            <div  class="campo">
+                <label for="RG">RG/Documento</label><input type="number" name="RG" id="RG">
+            </div>
+        </div>
+        <div class="colum">
+            <div  class="campo">
+                <label for="Mae">Filiação (Nome da mãe)</label><input type="text" name="Mae" id="Mae">
+            </div>
+            <div  class="campo">
+                <label for="Pai">Filiação (Nome do pai)</label><input type="text" name="Pai" id="Pai">
+            </div>
+        </div>
+        <div class="colum">
+            <div  class="campo">
+                <label for="Logradouro">Logradouro</label><input type="text" name="Logradouro" id="Logradouro">
+            </div>
+            <div  class="campo">
+                <label for="Numero">Número</label><input type="number" name="Numero" id="Numero">
+            </div>
+            
+        </div>
+        <div class="colum">
+            <div  class="campo">
+                <label for="Bairro">Bairro</label><input type="text" name="Bairro" id="Bairro">
+            </div>
+            <div  class="campo">
+                <label for="Complemento">Complemento</label><input type="text" name="Complemento" id="Complemento">
+            </div>
+            
+        </div>
+        <div class="colum">
+            <div  class="campo">
+                <label for="Cidade">Cidade</label><input type="text" name="Cidade" id="Cidade">
+            </div>
+            <div  class="campo">
+                <label for="Estado">Estado</label><input type="text" name="Estado" id="Estado">
+            </div>
+            
+        </div>
+
+        <div class="colum">
+            <div  class="campo">
+                <label for="CEP">CEP</label><input type="number" name="CEP" id="CEP">
+            </div>
+            <div  class="campo">
+                <label for="Telefone">Telefone</label><input type="number" name="Telefone" id="Telefone">
+            </div>
+            
+        </div>
+        <div class="colum">
+            <div  class="campo">
+                <label for="Celular">Celular</label><input type="number" name="Celular" id="Celuluar">
+            </div>
+            <div  class="campo">
+                <label for="EmailPrinc">E-mail Principal</label><input type="text" name="EmailPrinc" id="EmailPrinc">
+            </div>
+            
+        </div>
+        <div class="colum">
+            <div  class="campo">
+                <label for="EmailSec">E-mail Secundário</label><input type="text" name="EmailSec" id="EmailSec">
+            </div>
+            <div  class="campo">
+                <label for="Senha">Senha</label><input type="password" name="Senha" id="Senha">
+            </div>
+        </div>
+
+        <div class="colum">
+            <div  class="campo">
+                <label for="Cor">Cor Preferida</label><input type="color" name="Cor" id="Cor">
+            </div>
+            <div  class="campo">
+                <label for="Obs">Observações</label><textarea name="Obs" id="Obs" placeholder="Informações adicionais"></textarea>
+            </div>
+        </div>
+
+        <div class="colum">
+        </div>
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <input type="submit" value="Cadastrar">         <input type="reset" value="Limpar">
+    </form>
+    </div>
+</div>
+
+</body>
+</html>
