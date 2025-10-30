@@ -6,6 +6,9 @@
     }
     #calc{
         background: gray;
+    }    
+    #calcMeses{
+        background: green;
     }
 
 </style>
@@ -28,6 +31,17 @@
         <br><br>
         <label for="final">Ano Atual</label><input type="number" name="final" id="final" placeholder="Resultado" readonly> 
         </div>
+
+        <div id="calcMeses">
+            <label for="diaNascimento">Dia Nascimento</label><input type="number" name="diaNascimento" id="diaNascimento" placeholder="Ano de Nascimento">
+            <label for="mesNascimento">Mes Nascimento</label><input type="number" name="mesNascimento" id="mesNascimento" placeholder="Mes de Nascimento">
+            <label for="anoNascimento">Ano Nascimento</label><input type="number" name="anoNascimento" id="anoNascimento" placeholder="Ano de Nascimento">
+        <br>
+        <br>
+            <button onclick="CalculaIdade2()">Calcular</button>
+        <br><br>
+        <label for="final2">Ano Atual</label><input type="number" name="final2" id="final2" placeholder="Resultado" readonly> 
+        </div>
     </div>
 </body>
 </html>
@@ -44,6 +58,41 @@
 
         // mostra no campo
         document.getElementById('final').value = final;
+        // mostra no console (f12)
+        console.log(final)
+        // mostra no alert
+        window.alert(final)
+    }
+
+    function CalculaIdade2(){
+        var dia = document.getElementById('diaNascimento').value;
+        var mes = document.getElementById('mesNascimento').value;
+        var ano = document.getElementById('anoNascimento').value;
+        var diaatual = new Date().getUTCDate();
+        var mesatual = new Date().getUTCMonth() + 1;
+        var anoatual = new Date().getFullYear()
+
+        console.log(diaatual);
+        console.log(mesatual);
+        console.log(anoatual);
+        var final = 0;
+
+        if(mesatual-mes<0){
+            final = anoatual - ano - 1;
+            console.log(ano);
+            console.log(anoatual);
+        }
+        else if(mesatual-mes==0){
+            if(diaatual - dia < 0){
+                final = (anoatual - ano)-1;
+            }else{
+                final = anoatual - ano;
+            }
+        }else{
+            final = anoatual - ano;
+        }
+        // mostra no campo
+        document.getElementById('final2').value = final;
         // mostra no console (f12)
         console.log(final)
         // mostra no alert
