@@ -1,0 +1,52 @@
+<style>
+    #Calculadora{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    #calc{
+        background: gray;
+    }
+
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="Calculadora">
+        <div id="calc">
+            <label for="nascimento">Ano Nascimento</label><input type="number" name="nascimento" id="nascimento" placeholder="O ano de Nascimento">
+        <br>
+            <label for="atual">Ano Atual</label><input type="number" value="2025" name="atual" id="atual" placeholder="Ano para calculo">
+        <br>
+            <button onclick="CalculaIdade()">Calcular</button>
+        <br><br>
+        <label for="final">Ano Atual</label><input type="number" name="final" id="final" placeholder="Resultado" readonly> 
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+
+
+    function CalculaIdade(){
+        var nasc = document.getElementById('nascimento').value;
+        var atual = document.getElementById('atual').value;
+        var final = 0;
+
+        final = atual-nasc;
+
+        // mostra no campo
+        document.getElementById('final').value = final;
+        // mostra no console (f12)
+        console.log(final)
+        // mostra no alert
+        window.alert(final)
+    }
+</script>
