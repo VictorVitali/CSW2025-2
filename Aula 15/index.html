@@ -9,6 +9,7 @@
     }    
     #calcMeses{
         background: green;
+        padding: 30px;
     }
 
 </style>
@@ -34,13 +35,27 @@
 
         <div id="calcMeses">
             <label for="diaNascimento">Dia Nascimento</label><input type="number" name="diaNascimento" id="diaNascimento" placeholder="Ano de Nascimento">
-            <label for="mesNascimento">Mes Nascimento</label><input type="number" name="mesNascimento" id="mesNascimento" placeholder="Mes de Nascimento">
+            <label for="mesNascimento">Mes Nascimento</label>
+            <select class="mes" name="mesNascimento" id="mesNascimento">
+                <option value="01">Janeiro</option>
+                <option value="02">Fevereiro</option>
+                <option value="03">Março</option>
+                <option value="04">Abril</option>
+                <option value="05">Maio</option>
+                <option value="06">Junho</option>
+                <option value="07">Julho</option>
+                <option value="08">Agosto</option>
+                <option value="09">Setembro</option>
+                <option value="10">Outubro</option>
+                <option value="11">Novembro</option>
+                <option value="12">Dezembro</option>
+            </select>
             <label for="anoNascimento">Ano Nascimento</label><input type="number" name="anoNascimento" id="anoNascimento" placeholder="Ano de Nascimento">
-        <br>
-        <br>
+
+            <br><br><br>
+
             <button onclick="CalculaIdade2()">Calcular</button>
-        <br><br>
-        <label for="final2">Ano Atual</label><input type="number" name="final2" id="final2" placeholder="Resultado" readonly> 
+
         </div>
     </div>
 </body>
