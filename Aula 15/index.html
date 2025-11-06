@@ -4,13 +4,46 @@
         justify-content: center;
         text-align: center;
     }
-    #calc{
-        background: gray;
-    }    
-    #calcMeses{
-        background: green;
-        padding: 30px;
+    .campos, #Calcular{
+        border-radius: 8px;
+        border-color: rgba(0, 0, 255, 0.75);
+        border-width: 1px;
+        height: 50px;
     }
+    #diaNascimento{
+        width: 75px;
+    }
+    #mesNascimento, #anoNascimento{
+        width: 100px;
+    }
+    #Calcular{
+        padding: 20px;
+        width: 100%;
+        background-color: rgba(0, 0, 255, 0.75);
+        color: white;
+    }
+    #Titulo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color:  rgba(0, 0, 255, 0.75);
+        height: 100px;
+    }
+    .texto{
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: gray;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        width: 80%;
+    }
+    #campos{
+        padding: 50px;
+    }
+
 
 </style>
 <!DOCTYPE html>
@@ -23,20 +56,15 @@
 </head>
 <body>
     <div id="Calculadora">
-        <div id="calc">
-            <label for="nascimento">Ano Nascimento</label><input type="number" name="nascimento" id="nascimento" placeholder="O ano de Nascimento">
-        <br>
-            <label for="atual">Ano Atual</label><input type="number" value="2025" name="atual" id="atual" placeholder="Ano para calculo">
-        <br>
-            <button onclick="CalculaIdade()">Calcular</button>
-        <br><br>
-        <label for="final">Ano Atual</label><input type="number" name="final" id="final" placeholder="Resultado" readonly> 
-        </div>
-
         <div id="calcMeses">
-            <label for="diaNascimento">Dia Nascimento</label><input type="number" name="diaNascimento" id="diaNascimento" placeholder="Ano de Nascimento">
-            <label for="mesNascimento">Mes Nascimento</label>
-            <select class="mes" name="mesNascimento" id="mesNascimento">
+            <div id="Titulo">
+                <div class="texto">
+                    <span>Calculadora de Idade</span>
+                </div>
+            </div>
+            <div id="campos">
+                <label for="diaNascimento">Data de Nacimento:</label><input type="number" class="campos" name="diaNascimento" id="diaNascimento" ">
+                <select class="mes campos" name="mesNascimento" id="mesNascimento">
                 <option value="01">Janeiro</option>
                 <option value="02">Fevereiro</option>
                 <option value="03">Março</option>
@@ -50,11 +78,9 @@
                 <option value="11">Novembro</option>
                 <option value="12">Dezembro</option>
             </select>
-            <label for="anoNascimento">Ano Nascimento</label><input type="number" name="anoNascimento" id="anoNascimento" placeholder="Ano de Nascimento">
-
-            <br><br><br>
-
-            <button onclick="CalculaIdade2()">Calcular</button>
+            <input type="number" class="campos" name="anoNascimento" id="anoNascimento">
+        </div>
+            <button onclick="CalculaIdade2()" id="Calcular">Calcular</button>
 
         </div>
     </div>
@@ -94,7 +120,6 @@
 
         if(mesatual>mes){
             final = anoatual - ano - 1;
-
         }
         else if(mesatual==mes){
             if(dia < diaatual){
