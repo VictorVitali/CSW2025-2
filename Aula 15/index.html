@@ -1,8 +1,13 @@
 <style>
-    #Calculadora{
+    body{
+        background: rgb(29, 29, 29);
+        color: white;
+    }
+    #Calendario, #Calculadora{
         display: flex;
         justify-content: center;
         text-align: center;
+        padding: 50px;
     }
     .campos, #Calcular{
         border-radius: 8px;
@@ -55,7 +60,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="Calculadora">
+    <div id="Calendario">
         <div id="calcMeses">
             <div id="Titulo">
                 <div class="texto">
@@ -77,10 +82,34 @@
                 <option value="10">Outubro</option>
                 <option value="11">Novembro</option>
                 <option value="12">Dezembro</option>
+                
             </select>
             <input type="number" class="campos" name="anoNascimento" id="anoNascimento">
         </div>
             <button onclick="CalculaIdade2()" id="Calcular">Calcular</button>
+
+        </div>
+    </div>
+
+
+    <div id="Calculadora">
+        <div id="calcMeses">
+            <div id="Titulo">
+                <div class="texto">
+                    <span>Calculadora</span>
+                </div>
+            </div>
+            <div id="campos">
+                <input type="number" class="campos" name="diaNascimento" id="Valor1">
+                <select class="mes campos" name="Operador" id="Operador">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="/">/</option>
+                    <option value="x">x</option>
+            </select>
+            <input type="number" class="campos" name="anoNascimento" id="Valor2">
+        </div>
+            <button onclick="Calcular()" id="Calcular">Calcular</button>
 
         </div>
     </div>
@@ -113,9 +142,6 @@
         var mesatual = new Date().getUTCMonth() + 1;
         var anoatual = new Date().getFullYear()
 
-        console.log(diaatual);
-        console.log(mesatual);
-        console.log(anoatual);
         var final = 0;
 
         if(mesatual>mes){
@@ -134,6 +160,33 @@
         console.log(final)
         // mostra no alert
         window.alert(final)
+    }
+    function Calcular(){
+        var ope = document.getElementById('Operador').value;
+        var vlr1 = document.getElementById('Valor1').value;
+        var vlr2 = document.getElementById('Valor2').value;
+        var total = 0;
+        console.log(ope);
+        switch(ope){
+            case '-' :
+                total = Number(vlr1) - Number(vlr2);
+                break;
+            case '+' :
+                total = Number(vlr1) + Number(vlr2);
+                break;
+            case '/' :
+                total = Number(vlr1) / Number(vlr2);
+                break;
+            case 'x' :
+                total = Number(vlr1) * Number(vlr2);
+                break;
+            default:
+                break;
+        }
+        // mostra no console (f12)
+        console.log(total);
+        // mostra no alert
+        window.alert(total);
     }
 
 </script>
