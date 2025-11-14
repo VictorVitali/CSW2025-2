@@ -1,0 +1,166 @@
+:root {
+    --blue: #3981BF;
+    --green: #39BF81;
+    --grey: #8A8A8A;
+    --orange: #BF8139;
+}
+
+h1 {
+    size: 60px;
+}
+
+h2 {
+    size: 50px;
+}
+
+h3 {
+    size: 40px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #ededed;
+    display: flex;
+}
+
+/* MENU LATERAL */
+.sidebar {
+    width: 240px;
+    background: white;
+    height: 100vh;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.menu-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    margin: 12px 0;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.menu-item span {
+    margin-left: 10px;
+}
+
+.menu-footer {
+    margin-top: auto;
+    border-top: 1px solid rgb(246, 246, 246);
+    padding-top: 20px;
+}
+
+.Usuario {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.Usuario img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.dadosUser {
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.user-email {
+    font-size: 12px;
+    color: gray;
+}
+
+/* LADO DIREITO */
+.content {
+    flex: 1;
+    padding: 30px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.select-periodo {
+    padding: 8px 12px;
+    border: 1px solid --grey;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+}
+
+/* CALENDÁRIO (estilizado como a imagem) */
+.calendar-box {
+    margin-top: 30px;
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background: #e6e6e6;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.day {
+    background: white;
+    height: 90px;
+    padding: 6px;
+    font-size: 13px;
+}
+
+
+#filtroDMA {
+    display: inline-flex;
+    border: 2px solid #8d83ff;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+#filtroDMA button {
+    padding: 6px 20px;
+    border: 0;
+    background: #fff;
+    color: #6d63ff;
+    font-size: 15px;
+    cursor: pointer;
+    border-right: 2px solid #8d83ff;
+}
+
+#filtroDMA button:last-child {
+    border-right: 0;
+}
+
+/* Botão selecionado */
+#filtroDMA .active {
+    background: #e8e3ff;
+}
