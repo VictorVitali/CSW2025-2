@@ -5,111 +5,182 @@
     <meta charset="UTF-8">
     <title>Calendário</title>
     <link rel="stylesheet" href="style.css">
+    <script src="./main.js"></script>
 </head>
 
 <body>
 
     <!-- MENU LATERAL -->
     <div class="sidebar">
-        <div class="menu-title">Menu lateral</div>
-        <img src="./styles/imgs/Logo.png" class="logo">
-        <div class="menu-item">📁 <span>Banco de horas</span></div>
-        <div class="menu-item">🕓 <span>Histórico</span></div>
-        <div class="menu-item">📊 <span>Relatório</span></div>
-        <div class="menu-item">📝 <span>Solicitar</span></div>
-        <div class="menu-item">📦 <span>Pedidos</span></div>
-
+        <img src="./styles/imgs/Logo.svg" class="logo">
+        <div class="menu-item">
+            <img class="iconMenu" src="./styles/imgs/Clock.svg">
+            <span>Banco de horas</span>
+        </div>
+        <div class="menu-item">
+            <img class="iconMenu" src="./styles/imgs/Folder.svg">
+            <span>Histórico</span>
+        </div>
+        <div class="menu-item">
+            <img class="iconMenu" src="./styles/imgs/Documents.svg">
+            <span>Relatório</span>
+        </div>
+        <div class="menu-item">
+            <img class="iconMenu" src="./styles/imgs/Add.svg">
+            <span>Solicitar</span>
+        </div>
+        <div class="menu-item">
+            <img class="iconMenu" src="./styles/imgs/Important File.svg">
+            <span>Pedidos</span>
+        </div>
+        <!--MENU DE PERFIL-->
         <div class="menu-footer">
-            <div class="menu-item">❓ <span>Ajuda</span></div>
-            <div class="menu-item">⚙️ <span>Ajustes</span></div>
-
+            <div class="menu-item">
+                <img class="iconMenu" src="./styles/imgs/Help.svg">
+                <span>Ajuda</span>
+            </div>
+            <div class="menu-item">
+                <img class="iconMenu" src="./styles/imgs/Engrenagem.svg">
+                <span>Ajustes</span>
+            </div>
             <div class="Usuario">
-                <img src="./styles/imgs/Avatar.png">
+                <img class="iconMenu" src="./styles/imgs/Avatar.png">
                 <div class="dadosUser">
-                    Richard<br>
-                    <span class="user-email">9994lav@gmail.com</span>
+                    Vitali
+                    <br>
+                    <span class="user-email">tamoTestando@tamoTestando.com</span>
                 </div>
             </div>
         </div>
-
     </div>
+    <!-- FIM DA BARRA LATERAL -->
 
-    <!--  -->
+
     <div class="content">
-
-        <div class="header">
-            <div class="title">Calendário</div>
-            <div class="select-periodo">Selecione o período ▼</div>
+        <div class="page-title">
+            <h2>Consulta de horas</h2>
         </div>
 
-        <div class="calendar-box">
+        <div class="controls">
+            <div class="period-selector">
+                <label for="SelectMeses">Selecione o período:</label>
+                <select id="SelectMeses">
+                    <option value="1">Janeiro/2025</option>
+                    <option value="2">Fevereiro/2025</option>
+                    <option value="3">Março/2025</option>
+                    <option value="4">Abril/2025</option>
+                    <option value="5">Maio/2025</option>
+                    <option value="6">Junho/2025</option>
+                    <option value="7">Julho/2025</option>
+                    <option value="8">Agosto/2025</option>
+                    <option value="9">Setembro/2025</option>
+                    <option value="10">Outubro/2025</option>
+                    <option value="11">Novembro/2025</option>
+                    <option value="12">Dezembro/2025</option>
+                </select>
+            </div>
 
-            <div class="calendar-header">
-                <div>← August 2020 →</div>
-                <div id="filtroDMA">
-                    <button class="active">Month</button>
-                    <button>Week</button>
-                    <button>Day</button>
-                    <button>List</button>
+            <div class="nav-tabs">
+                <button class="active">Horas Extras</button>
+                <button>Banco de horas</button>
+                <button>Histórico</button>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card">
+                <h3>Banco de Horas</h3>
+                <p>Horas acumuladas</p>
+                <div class="valueCard">4h23m</div>
+            </div>
+            <div class="card">
+                <h3>Horas Extras</h3>
+                <p>Mês atual</p>
+                <div class="valueCard">0h54m</div>
+            </div>
+        </div>
+
+        <div id="Calendario">
+            <div class="header">
+                <div class="title">Calendário</div>
+            </div>
+
+            <div class="calendar-box">
+
+                <div class="calendar-header">
+                    <div>← August 2020 →</div>
+                    <div id="filtroDMA">
+                        <button onclick="SelectFiltroDMA('Month')" class="Month active">Month</button>
+                        <button onclick="SelectFiltroDMA('Week')" class="Week">Week</button>
+                        <button onclick="SelectFiltroDMA('Day')" class="Day">Day</button>
+                        <button onclick="SelectFiltroDMA('List')" class="List">List</button>
+                    </div>
                 </div>
+
+                <!-- Calendario -->
+                <div class="calendar-grid">
+                    <!-- Mes na mao pq nao pode usar biblioteca e to com preguiça de fazer um JS para isso -->
+                    <div class="naoMesAtual day">26</div>
+                    <div class="naoMesAtual day">27</div>
+                    <div class="naoMesAtual day">28</div>
+                    <div class="naoMesAtual day">29</div>
+                    <div class="naoMesAtual day">30</div>
+                    <div class="naoMesAtual day">31</div>
+                    <div class="day">1</div>
+
+                    <div class="day">2</div>
+                    <div class="day">3</div>
+                    <div class="day">4</div>
+                    <div class="day">5</div>
+                    <div class="day">6</div>
+                    <div class="day">7</div>
+                    <div class="day">8</div>
+
+                    <div class="day">9</div>
+                    <div class="day">10</div>
+                    <div class="day">11</div>
+                    <div class="day">12</div>
+                    <div class="day">13</div>
+                    <div class="day">14</div>
+                    <div class="day">15</div>
+
+                    <div class="day">16</div>
+                    <div class="day">17</div>
+                    <div class="day">18</div>
+                    <div class="day">19</div>
+                    <div class="day">20</div>
+                    <div class="day">21</div>
+                    <div class="day">22</div>
+
+                    <div class="day">23</div>
+                    <div class="day">24</div>
+                    <div class="day">25</div>
+                    <div class="day">26</div>
+                    <div class="day">27</div>
+                    <div class="day">28</div>
+                    <div class="day">29</div>
+
+                    <div class="day">30</div>
+                    <div class="day">31</div>
+                    <div class="naoMesAtual day">1</div>
+                    <div class="naoMesAtual day">2</div>
+                    <div class="naoMesAtual day">3</div>
+                    <div class="naoMesAtual day">4</div>
+                    <div class="naoMesAtual day">5</div>
+                </div>
+
             </div>
-
-            <!-- GRID SIMPLES DO MÊS -->
-            <div class="calendar-grid">
-                <!-- Apenas exemplo visual -->
-                <div class="day">26</div>
-                <div class="day">27</div>
-                <div class="day">28</div>
-                <div class="day">29</div>
-                <div class="day">30</div>
-                <div class="day">31</div>
-                <div class="day">1</div>
-
-                <div class="day">2</div>
-                <div class="day">3</div>
-                <div class="day">4</div>
-                <div class="day">5</div>
-                <div class="day">6</div>
-                <div class="day">7</div>
-                <div class="day">8</div>
-
-                <div class="day">9</div>
-                <div class="day">10</div>
-                <div class="day">11</div>
-                <div class="day">12</div>
-                <div class="day">13</div>
-                <div class="day">14</div>
-                <div class="day">15</div>
-
-                <div class="day">16</div>
-                <div class="day">17</div>
-                <div class="day">18</div>
-                <div class="day">19</div>
-                <div class="day">20</div>
-                <div class="day">21</div>
-                <div class="day">22</div>
-
-                <div class="day">23</div>
-                <div class="day">24</div>
-                <div class="day">25</div>
-                <div class="day">26</div>
-                <div class="day">27</div>
-                <div class="day">28</div>
-                <div class="day">29</div>
-
-                <div class="day">30</div>
-                <div class="day">31</div>
-                <div class="day"></div>
-                <div class="day"></div>
-                <div class="day"></div>
-                <div class="day"></div>
-                <div class="day"></div>
-            </div>
-
         </div>
 
+        <!--Botoes para testar notificacoes-->
+        <h2> V Botoes para testar notificacoes V</h2>
+        <button onclick="CriarNotificacao('Sucesso', 'Sucesso. Essa é uma notificação positiva')">Sucesso</button>
+        <button onclick="CriarNotificacao('Erro', 'Erro. Essa é uma notificação negativa')">Error</button>
     </div>
 
+    <div id="Alert">
+        <div id="ConteudoAlert"></div>
+    </div>
 </body>
 
 </html>
